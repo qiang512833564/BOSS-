@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MyLayer.h"
+
 @interface AnimationView : UIView
 
 @property (nonatomic, assign)BOOL animationStart;

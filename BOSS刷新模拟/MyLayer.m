@@ -7,8 +7,8 @@
 //
 
 #import "MyLayer.h"
-#define kDistance 3
-#define kDuration 0.3
+#define kDistance 3.1
+#define kDuration 0.21
 @interface MyLayer ()
 @property (nonatomic, strong)CAKeyframeAnimation *customAnimation;
 @end

@@ -36,20 +36,8 @@ break;\
     [object removeFromSuperlayer];\
 }
 
-#define CustomColor(value) ({UIColor *color=nil;\
-if(value.length){\
-float float1,float2,float3;\
-NSScanner *scanner = [NSScanner scannerWithString:value];\
-[scanner scanFloat:&float1];\
-scanner.scanLocation = scanner.scanLocation+1;\
-[scanner scanFloat:&float2];\
-scanner.scanLocation = scanner.scanLocation+1;\
-[scanner scanFloat:&float3];\
-[UIColor colorWithRed:float1/255.f green:float2/255.f blue:float3/255.f alpha:1.0];}else{\
-color = [UIColor whiteColor];}\
-(color);\
-})
-#define Speed 1
+
+#define Speed 4
 @interface AnimationView()
 {
     
@@ -102,21 +90,24 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
     if(self.animationStart){
         return;
     }
+
     CGPoint end = CGPointMake(CGRectGetWidth(self.frame)/2, Radius);
     CGPoint start;
+    CGFloat minY = 98;//---123
     
-    InitShapeLayer(secondLayer,200, Color2, CGPointMake(Radius, CGRectGetHeight(self.frame)/2), 79);
-    InitShapeLayer(thirdLayer, 300, Color3, CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)-Radius), 93);
-    InitShapeLayer(forthLayer, 400, Color4, CGPointMake(CGRectGetWidth(self.frame)-Radius, CGRectGetHeight(self.frame)/2), 108);
+    InitShapeLayer(secondLayer,200, Color2, CGPointMake(Radius, CGRectGetHeight(self.frame)/2), (minY+14/Speed));//minY+14.5/Speed
+    InitShapeLayer(thirdLayer, 300, Color3, CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)-Radius), (minY+28/Speed));//minY+30/Speed
+    InitShapeLayer(forthLayer, 400, Color4, CGPointMake(CGRectGetWidth(self.frame)-Radius, CGRectGetHeight(self.frame)/2), (minY+42/Speed));//minY+44/Speed
     
     
 #pragma mark --------------------------
     CGFloat offsetX = 2*Radius*cosf(M_PI/4);
-    if(contentOffY<-65){
-        contentOffY = Speed*contentOffY;
+    
+    if(contentOffY<-minY){
+        contentOffY = Speed*(contentOffY+minY);
         
         self.shapeLayer.fillColor = Color1.CGColor;
-        start = CGPointMake(end.x+contentOffY+65, end.y-contentOffY-65);
+        start = CGPointMake(end.x+contentOffY, end.y-contentOffY);
         if (start.x<=Radius+offsetX) {
             start = CGPointMake(Radius, CGRectGetHeight(self.frame)/2.f);
         }
@@ -131,7 +122,7 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
     }
     if(start.x - Radius <= 0){
         if (self.firstLayer == nil) {
-            self.firstLayer = [self layer:100 backgroundColor:Color1 center:end];
+            self.firstLayer = [self layer:minY backgroundColor:Color1 center:end];
             self.firstLayer.type = Top;
         }
         [self.layer insertSublayer:self.firstLayer below:self.shapeLayer];
@@ -140,11 +131,11 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
     }
     if(start.x-Radius<=0)
     {
-        CGPoint point0 = CGPointMake(end.x+contentOffY+65, end.y-contentOffY-65);
+        CGPoint point0 = CGPointMake(end.x+contentOffY, end.y-contentOffY);
         end = CGPointMake(point0.x+CGRectGetWidth(self.frame)/2-Radius-offsetX,point0.y-CGRectGetHeight(self.frame)/2+Radius+offsetX);
         start = CGPointMake(Radius, CGRectGetHeight(self.frame)/2.f);
         
-        CGFloat offset = 79;
+        CGFloat offset = 14;
 #if 1
         
         if (end.x-Radius<0) {
@@ -156,14 +147,14 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
                 start = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)-Radius);
                 end = CGPointMake(end.x-contentOffY-offset-start.x+Radius+offsetX, end.y-contentOffY-offset-CGRectGetHeight(self.frame)/2+Radius+offsetX);
 #if 1
-                offset = 93;
+                offset = 28;
                 if(end.y+Radius>CGRectGetHeight(self.frame)){
                     end = start;
                     start = CGPointMake(start.x-contentOffY-offset, start.y+contentOffY+offset);
                     if(start.x+Radius+offsetX>=CGRectGetWidth(self.frame)){
                         start = CGPointMake(CGRectGetWidth(self.frame)-Radius, CGRectGetHeight(self.frame)/2);
                         end = CGPointMake(end.x-contentOffY-offset-CGRectGetWidth(self.frame)/2+Radius+offsetX, end.y+contentOffY+offset+CGRectGetHeight(self.frame)/2-Radius-offsetX);
-                        offset = 108;
+                        offset = 42;
                         
                         if (end.x+Radius>=CGRectGetWidth(self.frame)) {
                             end = CGPointMake(CGRectGetWidth(self.frame)-Radius, CGRectGetHeight(self.frame)/2);

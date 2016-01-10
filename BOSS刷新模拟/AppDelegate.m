@@ -19,7 +19,15 @@
     // Override point for customization after application launch.
     return YES;
 }
-
+- (UIColor *)backColor{
+    return [UIColor colorWithRed:227/255.f green:234/255.f blue:234/255.f alpha:1.0];
+}
+- (UIColor *)titleColor{
+    return [UIColor colorWithRed:227/255.f green:234/255.f blue:234/255.f alpha:1.0];//CustomColor(@"78#195#185");
+}
+//- (void)setBackColor:(UIColor *)backColor{
+//    _backColor = [[UIColor alloc]initWithWhite:29 alpha:1.0];//[UIColor colorWithRed:201/255.f green:207/255.f blue:207/255.f alpha:1.0];
+//}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

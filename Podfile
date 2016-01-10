@@ -5,5 +5,6 @@
 
 target 'BOSS刷新模拟' do
 pod 'MJRefresh', '~> 3.1.0'
+pod 'Masonry', '~> 0.6.4'
 end
 
