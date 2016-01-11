@@ -65,6 +65,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		297E47AD1C43AB0500548B29 /* 动画 */ = {
+			isa = PBXGroup;
+			children = (
+				29B9B1041C3F637D00638E1C /* AnimationView.h */,
+				29B9B1051C3F637D00638E1C /* AnimationView.m */,
+				29B9B1021C3F61E500638E1C /* MyHeader.m */,
+				29B9B1011C3F61E500638E1C /* MyHeader.h */,
+				29B9B12A1C408FE000638E1C /* MyLayer.h */,
+				29B9B12B1C408FE000638E1C /* MyLayer.m */,
+			);
+			name = "动画";
+			sourceTree = "<group>";
+		};
+		297E47AE1C43AB3300548B29 /* 第一层视图 */ = {
+			isa = PBXGroup;
+			children = (
+				297E47AF1C43AB6200548B29 /* TitleView */,
+				29B9B0F01C3F482C00638E1C /* ViewController.h */,
+				29B9B0F11C3F482C00638E1C /* ViewController.m */,
+				29A119F41C4140F40066CFD3 /* TableViewCell.h */,
+				29A119F51C4140F40066CFD3 /* TableViewCell.m */,
+				29A119F71C4141060066CFD3 /* View.xib */,
+			);
+			name = "第一层视图";
+			sourceTree = "<group>";
+		};
+		297E47AF1C43AB6200548B29 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				297E47AA1C43478500548B29 /* UIButton+PopView.h */,
+				297E47AB1C43478500548B29 /* UIButton+PopView.m */,
+			);
+			name = TitleView;
+			sourceTree = "<group>";
+		};
 		29B9B0DE1C3F482C00638E1C = {
 			isa = PBXGroup;
 			children = (
@@ -89,21 +124,10 @@
 				290956771C423029006580BF /* Header.h */,
 				29B9B0ED1C3F482C00638E1C /* AppDelegate.h */,
 				29B9B0EE1C3F482C00638E1C /* AppDelegate.m */,
-				29B9B0F01C3F482C00638E1C /* ViewController.h */,
-				29B9B0F11C3F482C00638E1C /* ViewController.m */,
-				297E47AA1C43478500548B29 /* UIButton+PopView.h */,
-				297E47AB1C43478500548B29 /* UIButton+PopView.m */,
+				297E47AE1C43AB3300548B29 /* 第一层视图 */,
+				297E47AD1C43AB0500548B29 /* 动画 */,
 				29C1CC9A1C4283DA0065CDD8 /* BaseNav.h */,
 				29C1CC9B1C4283DA0065CDD8 /* BaseNav.m */,
-				29B9B1011C3F61E500638E1C /* MyHeader.h */,
-				29B9B1021C3F61E500638E1C /* MyHeader.m */,
-				29B9B1041C3F637D00638E1C /* AnimationView.h */,
-				29B9B1051C3F637D00638E1C /* AnimationView.m */,
-				29B9B12A1C408FE000638E1C /* MyLayer.h */,
-				29B9B12B1C408FE000638E1C /* MyLayer.m */,
-				29A119F41C4140F40066CFD3 /* TableViewCell.h */,
-				29A119F51C4140F40066CFD3 /* TableViewCell.m */,
-				29A119F71C4141060066CFD3 /* View.xib */,
 				29B9B0F31C3F482C00638E1C /* Main.storyboard */,
 				29B9B0F61C3F482C00638E1C /* Assets.xcassets */,
 				29B9B0F81C3F482C00638E1C /* LaunchScreen.storyboard */,

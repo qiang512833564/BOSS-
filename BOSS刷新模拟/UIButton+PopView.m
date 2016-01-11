@@ -9,10 +9,10 @@
 #import "UIButton+PopView.h"
 #import <objc/runtime.h>
 
-#define CustomButton(direction,mySelector)\
+#define CustomButton(direction,mySelector,offSet)\
 ({UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];\
 [btn setBackgroundColor:(direction)?[UIColor whiteColor]:[UIColor colorWithRed:71/255.f green:192/255.f blue:182/255.f alpha:1.0]];\
-btn.frame = CGRectMake(0, ((direction)?0:(frame.size.height-arrowSize.height)/2)+arrowSize.height, frame.size.width, (frame.size.height-arrowSize.height)/2.0);\
+btn.frame = CGRectMake(offSet, ((direction)?0:(frame.size.height-arrowSize.height)/2)+arrowSize.height, frame.size.width, (frame.size.height-arrowSize.height)/2.0);\
 [btn setTitleColor:(!direction)?[UIColor whiteColor]:[UIColor colorWithRed:71/255.f green:192/255.f blue:182/255.f alpha:1.0] forState:UIControlStateNormal];\
 btn.titleLabel.font = [UIFont systemFontOfSize:14.1];\
 UIRectCorner corners = 0;\
@@ -70,14 +70,16 @@ btn.layer.mask = clipShapelayer;\
 //    popView.autoresizesSubviews = YES;
     UIView *superView = [[UIView alloc]init];
     superView.layer.masksToBounds = YES;
-    
+    superView.backgroundColor = [UIColor clearColor];
     objc_setAssociatedObject(self, _cmd, popView, OBJC_ASSOCIATION_RETAIN);
     UIImage *image = nil;
     
+    CGFloat offSet = 3;
+    
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     CGRect frame = [self class].myFrame;
-    superView.frame =frame;
-    popView.frame = superView.bounds;
+    superView.frame = CGRectMake(frame.origin.x-offSet, frame.origin.y-offSet, frame.size.width+2*offSet, frame.size.height+2*offSet);
+    popView.frame = CGRectMake(offSet, offSet, frame.size.width, frame.size.height);
     [superView addSubview:popView];
 #if 1
     CGPoint arrowPoint = CGPointMake(CGRectGetWidth(frame)/2,0);//
@@ -152,9 +154,9 @@ btn.layer.mask = clipShapelayer;\
     [[UIApplication sharedApplication].keyWindow addSubview:superView];
 
     
-    UIButton *down = CustomButton(0, @selector(downBtnAction));
+    UIButton *down = CustomButton(0, @selector(downBtnAction),offSet);
     
-    UIButton *up = CustomButton(1, @selector(upBtnAction));
+    UIButton *up = CustomButton(1, @selector(upBtnAction),offSet);
     
     [up setTitle:@"iOS" forState:UIControlStateNormal];
     
