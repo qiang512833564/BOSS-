@@ -55,7 +55,7 @@ return value;\
     if(_myTitleLabel == nil){
         _myTitleLabel = [[UILabel alloc]init];
         _myTitleLabel.textColor = [UIColor colorWithRed:78/255.f green:195/255.f blue:185/255.f alpha:1.0];
-        _myTitleLabel.font = [UIFont fontWithName:@"lowanOldStyle-Bold" size:22];
+        _myTitleLabel.font = [UIFont fontWithName:@"lowanOldStyle-Bold" size:24];
         _myTitleLabel.text = @"iOS开发工程师";
         [self.myContentView addSubview:self.myTitleLabel];
     }
@@ -92,7 +92,7 @@ MyCustomButton(educationBtn, @"location",@"本科");
         _salary = [[UILabel alloc]init];
         _salary.text = @"￥10k-20k";
         _salary.textColor = [UIColor redColor];
-        _salary.font = [UIFont fontWithName:@"Thonburi" size:12];
+        _salary.font = [UIFont fontWithName:@"Thonburi" size:14];
         [self.topView addSubview:_salary];
     }
     return _salary;
@@ -107,27 +107,27 @@ MyCustomButton(educationBtn, @"location",@"本科");
     [self.salary mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.topView.mas_left).with.offset(8);
         make.bottom.equalTo(self.topView.mas_bottom).with.offset(8.5);
-        make.width.with.offset(70);
+        make.width.with.offset(80);
         make.height.with.offset(40);
     }];
     [self.locationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.topView.mas_bottom).with.offset(9);
         make.left.equalTo(self.salary.mas_right).with.offset(8);
-        make.width.with.offset(40);
+        make.width.with.offset(45);
         make.height.with.offset(40);
     }];
     [self.locationBtn update];
     [self.yearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.topView.mas_bottom).with.offset(9);
         make.left.equalTo(self.locationBtn.mas_right).with.offset(8);
-        make.width.with.offset(40);
+        make.width.with.offset(45);
         make.height.with.offset(40);
     }];
     [self.yearBtn update];
     [self.educationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.topView.mas_bottom).with.offset(9);
         make.left.equalTo(self.yearBtn.mas_right).with.offset(8);
-        make.width.with.offset(40);
+        make.width.with.offset(45);
         make.height.with.offset(40);
     }];
     [self.educationBtn update];
@@ -218,7 +218,7 @@ if(self.image&&!self.title){\
     CGContextDrawImage(ctx, MyFrameToCenter(self.imageFrame),self.imageRef);
     CGContextRestoreGState(ctx);
     
-    [self drawString:self.title inRect:self.titleFrame font:[UIFont fontWithName:@"GillSans-Light" size:12] textColor:[UIColor colorWithRed:102/255.f green:102/255.f blue:102/255.f alpha:1.0]];
+    [self drawString:self.title inRect:self.titleFrame font:[UIFont fontWithName:@"GillSans-Light" size:14] textColor:[UIColor colorWithRed:102/255.f green:102/255.f blue:102/255.f alpha:1.0]];
 #endif
    
 }

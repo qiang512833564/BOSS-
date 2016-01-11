@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		297E47AC1C43478500548B29 /* UIButton+PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 297E47AB1C43478500548B29 /* UIButton+PopView.m */; };
 		29A119F61C4140F40066CFD3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A119F51C4140F40066CFD3 /* TableViewCell.m */; };
 		29A119F81C4141070066CFD3 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A119F71C4141060066CFD3 /* View.xib */; };
 		29B9B0EC1C3F482C00638E1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B9B0EB1C3F482C00638E1C /* main.m */; };
@@ -18,12 +19,15 @@
 		29B9B1031C3F61E500638E1C /* MyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B9B1021C3F61E500638E1C /* MyHeader.m */; };
 		29B9B1061C3F637D00638E1C /* AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B9B1051C3F637D00638E1C /* AnimationView.m */; };
 		29B9B12C1C408FE000638E1C /* MyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B9B12B1C408FE000638E1C /* MyLayer.m */; };
+		29C1CC9C1C4283DA0065CDD8 /* BaseNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1CC9B1C4283DA0065CDD8 /* BaseNav.m */; };
 		C6057C0E124F078EF7E56B63 /* libPods-BOSS刷新模拟.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AF0F11F96462AD6CCC70E /* libPods-BOSS刷新模拟.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		035C899F62FDD14C6F6753D3 /* Pods-BOSS刷新模拟.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOSS刷新模拟.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BOSS刷新模拟/Pods-BOSS刷新模拟.debug.xcconfig"; sourceTree = "<group>"; };
 		290956771C423029006580BF /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		297E47AA1C43478500548B29 /* UIButton+PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PopView.h"; sourceTree = "<group>"; };
+		297E47AB1C43478500548B29 /* UIButton+PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PopView.m"; sourceTree = "<group>"; };
 		29A119F41C4140F40066CFD3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		29A119F51C4140F40066CFD3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		29A119F71C4141060066CFD3 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		29B9B1051C3F637D00638E1C /* AnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationView.m; sourceTree = "<group>"; };
 		29B9B12A1C408FE000638E1C /* MyLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayer.h; sourceTree = "<group>"; };
 		29B9B12B1C408FE000638E1C /* MyLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayer.m; sourceTree = "<group>"; };
+		29C1CC9A1C4283DA0065CDD8 /* BaseNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNav.h; sourceTree = "<group>"; };
+		29C1CC9B1C4283DA0065CDD8 /* BaseNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNav.m; sourceTree = "<group>"; };
 		5A1AF0F11F96462AD6CCC70E /* libPods-BOSS刷新模拟.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BOSS刷新模拟.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F71BE3CAEB5974F3C79AD52 /* Pods-BOSS刷新模拟.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOSS刷新模拟.release.xcconfig"; path = "Pods/Target Support Files/Pods-BOSS刷新模拟/Pods-BOSS刷新模拟.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +91,10 @@
 				29B9B0EE1C3F482C00638E1C /* AppDelegate.m */,
 				29B9B0F01C3F482C00638E1C /* ViewController.h */,
 				29B9B0F11C3F482C00638E1C /* ViewController.m */,
+				297E47AA1C43478500548B29 /* UIButton+PopView.h */,
+				297E47AB1C43478500548B29 /* UIButton+PopView.m */,
+				29C1CC9A1C4283DA0065CDD8 /* BaseNav.h */,
+				29C1CC9B1C4283DA0065CDD8 /* BaseNav.m */,
 				29B9B1011C3F61E500638E1C /* MyHeader.h */,
 				29B9B1021C3F61E500638E1C /* MyHeader.m */,
 				29B9B1041C3F637D00638E1C /* AnimationView.h */,
@@ -252,8 +262,10 @@
 			files = (
 				29A119F61C4140F40066CFD3 /* TableViewCell.m in Sources */,
 				29B9B1031C3F61E500638E1C /* MyHeader.m in Sources */,
+				297E47AC1C43478500548B29 /* UIButton+PopView.m in Sources */,
 				29B9B0F21C3F482C00638E1C /* ViewController.m in Sources */,
 				29B9B0EF1C3F482C00638E1C /* AppDelegate.m in Sources */,
+				29C1CC9C1C4283DA0065CDD8 /* BaseNav.m in Sources */,
 				29B9B12C1C408FE000638E1C /* MyLayer.m in Sources */,
 				29B9B0EC1C3F482C00638E1C /* main.m in Sources */,
 				29B9B1061C3F637D00638E1C /* AnimationView.m in Sources */,

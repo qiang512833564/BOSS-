@@ -40,7 +40,7 @@ break;\
 #define Speed 4
 @interface AnimationView()
 {
-    
+    CGFloat _oldY;
 }
 @property (nonatomic, strong)CAShapeLayer *shapeLayer;
 @property (nonatomic, strong)MyLayer *firstLayer;
@@ -113,12 +113,18 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
         }
         self.shapeLayer.fillColor = Color1.CGColor;
     }else {
+        
         start = CGPointMake(end.x, Radius);
         if(self.firstLayer){
             [self.firstLayer removeFromSuperlayer];
         }
-        self.shapeLayer.fillColor = Color1WithAlpha(-contentOffY/123).CGColor;//;
+        if(_oldY>contentOffY){
+            self.shapeLayer.fillColor = Color1WithAlpha(1).CGColor;
+        }else{
+            self.shapeLayer.fillColor = Color1WithAlpha(-1*(contentOffY+91)/8).CGColor;//;
+        }
         
+        _oldY = contentOffY;
     }
     if(start.x - Radius <= 0){
         if (self.firstLayer == nil) {

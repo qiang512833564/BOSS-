@@ -11,16 +11,52 @@
 #import "AnimationView.h"
 #import "AppDelegate.h"
 #import "TableViewCell.h"
+#import "UIButton+PopView.h"
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *mytableView;
-
+@property (nonatomic, strong) UIButton *centerBtn;
+@property (nonatomic, strong) UIView *popView;
 @end
 
 @implementation ViewController
+- (UIView *)popView{
+    if(_popView == nil){
+        _popView = [[UIView alloc]initWithFrame:CGRectZero];
+        _popView.backgroundColor = [UIColor whiteColor];
+        _popView.layer.masksToBounds = YES;
+        _popView.layer.cornerRadius = 7;
+    }
+    return _popView;
+}
+- (UIButton *)centerBtn{
+    if(_centerBtn == nil){
+        _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _centerBtn.frame =CGRectMake(0, 0, 122/2, 53/2);
+        _centerBtn.backgroundColor = [UIColor clearColor];
+        [_centerBtn setAdjustsImageWhenHighlighted:NO];
+        [_centerBtn setImage:[self arrowDirection:[UIColor whiteColor] direction:NO] forState:UIControlStateNormal];
+        [_centerBtn setImage:[self arrowDirection:[UIColor whiteColor] direction:YES] forState:UIControlStateSelected];
+        [_centerBtn addTarget:self action:@selector(BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_centerBtn setTitle:@"iOS  " forState:UIControlStateNormal];
+        _centerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -23, 0, 0);
+        _centerBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -73);
+        UIButton.myFrame = CGRectMake(CGRectGetWidth(self.view.frame)/2.f-( _centerBtn.bounds.size.width+2*60)/2, 55, _centerBtn.bounds.size.width+2*60, 83);
+        UIView *view = [[UIView alloc]init];
+        _centerBtn.popView = view;
+        _centerBtn.animated = NO;
+    }
+    return _centerBtn;
+}
 
+- (void)BtnAction:(UIButton *)btn{
+    btn.selected = !btn.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"View" bundle:nil] forCellReuseIdentifier:@"CellID"];
+    
+    self.navigationItem.titleView = self.centerBtn;
+    
     self.mytableView.backgroundColor = ((AppDelegate *)[UIApplication sharedApplication].delegate).backColor;
     self.mytableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.mytableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -35,6 +71,8 @@
 //    animationView.backgroundColor = [UIColor greenColor];
 //    [self.mytableView.mj_header addSubview:animationView];
     [self.mytableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 10-5;
@@ -73,5 +111,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (UIImage *)arrowDirection:(UIColor *)color direction:(BOOL)up{
+    UIImage *image = nil;
+    UIGraphicsBeginImageContext(CGSizeMake(13, 7.2));
+   
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    if(up){
+        CGContextTranslateCTM(context, 0, 7.2);
+        CGContextScaleCTM(context, 1, -1);
+    }else{
+    }
+    
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, 1.3);
+    CGContextMoveToPoint(context, 0, 0);
+    CGContextAddLineToPoint(context, 13, 0);
+    CGContextAddLineToPoint(context, 13/2, 7.2);
+    //CGContextClosePath(context);
+    CGContextAddLineToPoint(context, 2.3, 3.7);
+    CGContextDrawPath(context, kCGPathStroke);
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end
