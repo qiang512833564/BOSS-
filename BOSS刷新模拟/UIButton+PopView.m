@@ -114,7 +114,7 @@ btn.layer.mask = clipShapelayer;\
     
     
     CGPoint center3 = CGPointMake(CGRectGetWidth(frame)-radius, CGRectGetHeight(frame)-radius);
-    //[path addLineToPoint:CGPointMake(center3.x, center3.y+radius)];
+    [path addLineToPoint:CGPointMake(center3.x, center3.y+radius)];
     
     [path addArcWithCenter:center3 radius:radius startAngle:M_PI/2 endAngle:0 clockwise:NO];
     
