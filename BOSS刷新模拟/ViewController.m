@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "TableViewCell.h"
 #import "UIButton+PopView.h"
+#import "BOSS刷新模拟-Swift.h"
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *mytableView;
 @property (nonatomic, strong) UIButton *centerBtn;
@@ -106,6 +107,29 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
    // }
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailVC *vc = [[DetailVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    UIButton *btn = (UIButton*)self.navigationItem.titleView;
+    if(btn.selected){
+        btn.popView.hidden = NO;
+    }
+    if (self.tableView.mj_header.state == MJRefreshStateRefreshing){
+        MyHeader *header =  (MyHeader *)self.tableView.mj_header;
+        [header startAnimations];
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    UIButton *btn = (UIButton*)self.navigationItem.titleView;
+    if(btn.selected){
+        btn.popView.hidden = YES;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

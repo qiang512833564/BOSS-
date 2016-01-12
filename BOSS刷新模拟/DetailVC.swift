@@ -6,8 +6,14 @@
 //  Copyright © 2016年 lizhongqiang. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class DetailVC: UIViewController {
-
+class DetailVC: UIViewController,CenterLoadingDelegate {
+    var centerLoading:CenterLoading!
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.whiteColor();
+        centerLoading = CenterLoading(size: CGSizeMake(150,50))
+        self.view.addSubview(centerLoading)
+    }
+    
 }

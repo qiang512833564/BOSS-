@@ -15,5 +15,7 @@
 @property (nonatomic, strong)UIButton *upBtn;
 + (CGRect)myFrame;
 + (void)setMyFrame:(CGRect)myFrame;
+- (void)dismiss;
+- (void)show;
 //- (CAShapeLayer *)popLayer;
 @end

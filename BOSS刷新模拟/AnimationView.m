@@ -237,6 +237,7 @@ UIBezierPath * secondPath(CGPoint point1,CGPoint point2,CGFloat radius){
     if (forthLayer) {
         [forthLayer animationStart];
     }
+    self.animationStart = YES;
     [self.layer addAnimation:self.animation forKey:@"animation"];
     
 }

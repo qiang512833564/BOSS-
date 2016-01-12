@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIBezierPath (MyText)
-
++(UIBezierPath *)bezierPathWithText:(NSString *)text attributes:(NSDictionary *)attrs;
++ (NSMutableArray *)layers;
++ (void)setLayers:(NSMutableArray *)layers;
++ (CGFloat)number;
++ (void)setNumber:(CGFloat)number;
 @end

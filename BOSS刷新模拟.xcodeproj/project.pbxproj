@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296A91E11C44989A00A0BC0D /* CenterLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A91E01C44989A00A0BC0D /* CenterLoading.swift */; };
+		296A91E51C44A4CF00A0BC0D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A91E41C44A4CF00A0BC0D /* UILabelExtension.swift */; };
+		296A91EB1C44F6ED00A0BC0D /* UIBezierPath+MyText.m in Sources */ = {isa = PBXBuildFile; fileRef = 296A91EA1C44F6ED00A0BC0D /* UIBezierPath+MyText.m */; };
 		297E47AC1C43478500548B29 /* UIButton+PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 297E47AB1C43478500548B29 /* UIButton+PopView.m */; };
+		297E47B21C43AD6C00548B29 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E47B11C43AD6C00548B29 /* DetailVC.swift */; };
 		29A119F61C4140F40066CFD3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A119F51C4140F40066CFD3 /* TableViewCell.m */; };
 		29A119F81C4141070066CFD3 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A119F71C4141060066CFD3 /* View.xib */; };
 		29B9B0EC1C3F482C00638E1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B9B0EB1C3F482C00638E1C /* main.m */; };
@@ -26,8 +30,14 @@
 /* Begin PBXFileReference section */
 		035C899F62FDD14C6F6753D3 /* Pods-BOSS刷新模拟.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOSS刷新模拟.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BOSS刷新模拟/Pods-BOSS刷新模拟.debug.xcconfig"; sourceTree = "<group>"; };
 		290956771C423029006580BF /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		296A91E01C44989A00A0BC0D /* CenterLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterLoading.swift; sourceTree = "<group>"; };
+		296A91E41C44A4CF00A0BC0D /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		296A91E91C44F6ED00A0BC0D /* UIBezierPath+MyText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+MyText.h"; sourceTree = "<group>"; };
+		296A91EA1C44F6ED00A0BC0D /* UIBezierPath+MyText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+MyText.m"; sourceTree = "<group>"; };
 		297E47AA1C43478500548B29 /* UIButton+PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PopView.h"; sourceTree = "<group>"; };
 		297E47AB1C43478500548B29 /* UIButton+PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PopView.m"; sourceTree = "<group>"; };
+		297E47B01C43AD6C00548B29 /* BOSS刷新模拟-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BOSS刷新模拟-Bridging-Header.h"; sourceTree = "<group>"; };
+		297E47B11C43AD6C00548B29 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		29A119F41C4140F40066CFD3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		29A119F51C4140F40066CFD3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		29A119F71C4141060066CFD3 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
@@ -128,11 +138,17 @@
 				297E47AD1C43AB0500548B29 /* 动画 */,
 				29C1CC9A1C4283DA0065CDD8 /* BaseNav.h */,
 				29C1CC9B1C4283DA0065CDD8 /* BaseNav.m */,
+				297E47B11C43AD6C00548B29 /* DetailVC.swift */,
+				296A91E01C44989A00A0BC0D /* CenterLoading.swift */,
+				296A91E41C44A4CF00A0BC0D /* UILabelExtension.swift */,
+				296A91E91C44F6ED00A0BC0D /* UIBezierPath+MyText.h */,
+				296A91EA1C44F6ED00A0BC0D /* UIBezierPath+MyText.m */,
 				29B9B0F31C3F482C00638E1C /* Main.storyboard */,
 				29B9B0F61C3F482C00638E1C /* Assets.xcassets */,
 				29B9B0F81C3F482C00638E1C /* LaunchScreen.storyboard */,
 				29B9B0FB1C3F482C00638E1C /* Info.plist */,
 				29B9B0EA1C3F482C00638E1C /* Supporting Files */,
+				297E47B01C43AD6C00548B29 /* BOSS刷新模拟-Bridging-Header.h */,
 			);
 			path = "BOSS刷新模拟";
 			sourceTree = "<group>";
@@ -285,10 +301,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A119F61C4140F40066CFD3 /* TableViewCell.m in Sources */,
+				296A91E11C44989A00A0BC0D /* CenterLoading.swift in Sources */,
 				29B9B1031C3F61E500638E1C /* MyHeader.m in Sources */,
 				297E47AC1C43478500548B29 /* UIButton+PopView.m in Sources */,
+				296A91EB1C44F6ED00A0BC0D /* UIBezierPath+MyText.m in Sources */,
 				29B9B0F21C3F482C00638E1C /* ViewController.m in Sources */,
 				29B9B0EF1C3F482C00638E1C /* AppDelegate.m in Sources */,
+				296A91E51C44A4CF00A0BC0D /* UILabelExtension.swift in Sources */,
+				297E47B21C43AD6C00548B29 /* DetailVC.swift in Sources */,
 				29C1CC9C1C4283DA0065CDD8 /* BaseNav.m in Sources */,
 				29B9B12C1C408FE000638E1C /* MyLayer.m in Sources */,
 				29B9B0EC1C3F482C00638E1C /* main.m in Sources */,
@@ -405,12 +425,15 @@
 			baseConfigurationReference = 035C899F62FDD14C6F6753D3 /* Pods-BOSS刷新模拟.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BOSS刷新模拟/Header.h";
 				INFOPLIST_FILE = "BOSS刷新模拟/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.BOSS----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BOSS刷新模拟/BOSS刷新模拟-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -419,12 +442,14 @@
 			baseConfigurationReference = 5F71BE3CAEB5974F3C79AD52 /* Pods-BOSS刷新模拟.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BOSS刷新模拟/Header.h";
 				INFOPLIST_FILE = "BOSS刷新模拟/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.BOSS----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BOSS刷新模拟/BOSS刷新模拟-Bridging-Header.h";
 			};
 			name = Release;
 		};

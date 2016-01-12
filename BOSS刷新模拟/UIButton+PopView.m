@@ -29,7 +29,7 @@ CAShapeLayer *clipShapelayer = [CAShapeLayer layer];\
 clipShapelayer.path = clipPath.CGPath;\
 btn.layer.mask = clipShapelayer;\
 [btn addTarget:self action:mySelector forControlEvents:UIControlEventTouchUpInside];\
-[superView addSubview:btn];\
+[popView addSubview:btn];\
 (btn);})
 
 @implementation UIButton (PopView)
@@ -68,9 +68,7 @@ btn.layer.mask = clipShapelayer;\
 }
 - (void)setPopView:(UIView *)popView{
 //    popView.autoresizesSubviews = YES;
-    UIView *superView = [[UIView alloc]init];
-    superView.layer.masksToBounds = YES;
-    superView.backgroundColor = [UIColor clearColor];
+    popView.layer.masksToBounds = YES;
     objc_setAssociatedObject(self, _cmd, popView, OBJC_ASSOCIATION_RETAIN);
     UIImage *image = nil;
     
@@ -78,9 +76,7 @@ btn.layer.mask = clipShapelayer;\
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     CGRect frame = [self class].myFrame;
-    superView.frame = CGRectMake(frame.origin.x-offSet, frame.origin.y-offSet, frame.size.width+2*offSet, frame.size.height+2*offSet);
-    popView.frame = CGRectMake(offSet, offSet, frame.size.width, frame.size.height);
-    [superView addSubview:popView];
+    popView.frame = CGRectMake(frame.origin.x-offSet, frame.origin.y-offSet, frame.size.width+2*offSet, frame.size.height+2*offSet);
 #if 1
     CGPoint arrowPoint = CGPointMake(CGRectGetWidth(frame)/2,0);//
     CGSize arrowSize = CGSizeMake(13, 8);
@@ -142,29 +138,31 @@ btn.layer.mask = clipShapelayer;\
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //popLayer.backgroundColor = [UIColor yellowColor].CGColor;
-    popView.layer.backgroundColor = [UIColor colorWithPatternImage:image].CGColor;
+    shapeLayer.fillColor = [UIColor whiteColor].CGColor;
+    [popView.layer addSublayer:shapeLayer];
+    //popView.layer.backgroundColor = [UIColor colorWithPatternImage:image].CGColor;
 #endif
     //popLayer.mask = shapeLayer;---注意:如果想下面的阴影设置成功，则需要不修剪layer层，这是因为阴影是超出layer的frame的，而mask或者maskToBounds会修剪掉超出layer-frame以外的
-    popView.layer.shadowRadius = 1.0;
-    popView.layer.shadowOpacity = 0.5;
-    popView.layer.shadowOffset = CGSizeMake(0, 0);
-    popView.layer.shadowColor = [UIColor grayColor].CGColor;//UIViewAutoresizingNone
+    shapeLayer.shadowRadius = 1.0;
+    shapeLayer.shadowOpacity = 0.5;
+    shapeLayer.shadowOffset = CGSizeMake(0, 0);
+    shapeLayer.shadowColor = [UIColor grayColor].CGColor;//UIViewAutoresizingNone
     
    
-    [[UIApplication sharedApplication].keyWindow addSubview:superView];
+    [[UIApplication sharedApplication].keyWindow addSubview:popView];
 
     
-    UIButton *down = CustomButton(0, @selector(downBtnAction),offSet);
+    UIButton *down = CustomButton(0, @selector(downBtnAction),0);
     
-    UIButton *up = CustomButton(1, @selector(upBtnAction),offSet);
+    UIButton *up = CustomButton(1, @selector(upBtnAction),0);
     
     [up setTitle:@"iOS" forState:UIControlStateNormal];
     
     [down setTitle:@"管理求职意向" forState:UIControlStateNormal];
     
-    popView.superview.transform = CGAffineTransformMakeScale(0.0, 0.0);
-//
-    
+    popView.transform = CGAffineTransformMakeScale(0.0, 0.0);
+
+//    
 //    down.autoresizingMask=UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
 //    up.autoresizingMask=UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     self.downBtn =down;
@@ -183,10 +181,10 @@ btn.layer.mask = clipShapelayer;\
 - (void)show{
     
     [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.popView.superview.transform = CGAffineTransformIdentity;
-        CGRect frame = self.popView.superview.frame;
-        frame.size.height = self.popView.frame.size.height;
-        self.popView.superview.frame = frame;
+        self.popView.transform = CGAffineTransformIdentity;
+        CGRect frame = self.popView.frame;
+        frame.size.height = 80;//UIButton.myFrame.size.height;
+        self.popView.frame = frame;
     } completion:^(BOOL finished) {
         
     }];
@@ -195,10 +193,10 @@ btn.layer.mask = clipShapelayer;\
     
    
     [UIView animateWithDuration:0.5 animations:^{
-                 CGRect frame = self.popView.superview.frame;
+                 CGRect frame = self.popView.frame;
                 frame.size.height = 0;
-                self.popView.superview.frame = frame;
-        self.popView.superview.transform = CGAffineTransformMakeScale(0.00000001, 0.00000001);
+                self.popView.frame = frame;
+        self.popView.transform = CGAffineTransformMakeScale(0.00000001, 0.00000001);
 
     }];
    
