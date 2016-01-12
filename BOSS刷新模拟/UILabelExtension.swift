@@ -44,9 +44,9 @@ extension UILabel {
             self.layer.addSublayer(newValue)
             UIBezierPath.layers().enumerateObjectsUsingBlock { (object, index, bool) -> Void in
                 let layer = object as! CAShapeLayer
-                layer.time = 0.55
+                layer.time = 0.5
              
-                layer.delay = Double(index)*0.23
+                layer.delay = Double(index)*0.125
                 layer.startAnimation()
                 
                 layer.strokeColor = self.textColor.CGColor
@@ -80,7 +80,7 @@ extension CAShapeLayer{
     func startAnimation(){
 //        sleep(UInt32(self.delay))
         let animation = CAKeyframeAnimation(keyPath: "position.y")//transform.m42
-        animation.values = [(5),(-5)];
+        animation.values = [(3),(-3)];
         animation.autoreverses = true
         animation.beginTime = Double(self.delay)
         animation.repeatCount = MAXFLOAT

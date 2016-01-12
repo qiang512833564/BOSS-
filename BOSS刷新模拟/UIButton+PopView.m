@@ -103,12 +103,12 @@ btn.layer.mask = clipShapelayer;\
     [path addLineToPoint:CGPointMake(arrowPoint.x-arrowSize.width/2, arrowPoint.y+arrowSize.height)];
     
     
-    CGPoint center1 = CGPointMake(0+radius, 0+arrowSize.height+radius);
+    CGPoint center1 = CGPointMake(radius, 0+arrowSize.height+radius);
     [path addLineToPoint:CGPointMake(center1.x, center1.y-radius)];
     [path addArcWithCenter:center1 radius:radius startAngle:M_PI*3/2.0 endAngle:M_PI clockwise:NO];
-    [path addLineToPoint:CGPointMake(center1.x-radius, center1.y)];
+//    [path addLineToPoint:CGPointMake(center1.x-radius, center1.y)];
     
-    CGPoint center2 = CGPointMake(0+radius, CGRectGetHeight(frame)-radius);
+    CGPoint center2 = CGPointMake(20*offSet+radius, CGRectGetHeight(frame)-radius);
     [path addLineToPoint:CGPointMake(center2.x-radius,center2.y)];
     [path addArcWithCenter:center2 radius:radius startAngle:M_PI endAngle:M_PI/2.0 clockwise:NO];
     
@@ -183,7 +183,7 @@ btn.layer.mask = clipShapelayer;\
     [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.popView.transform = CGAffineTransformIdentity;
         CGRect frame = self.popView.frame;
-        frame.size.height = 80;//UIButton.myFrame.size.height;
+        frame.size.height = 90;//UIButton.myFrame.size.height;
         self.popView.frame = frame;
     } completion:^(BOOL finished) {
         

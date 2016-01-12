@@ -16,19 +16,10 @@
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *mytableView;
 @property (nonatomic, strong) UIButton *centerBtn;
-@property (nonatomic, strong) UIView *popView;
 @end
 
 @implementation ViewController
-- (UIView *)popView{
-    if(_popView == nil){
-        _popView = [[UIView alloc]initWithFrame:CGRectZero];
-        _popView.backgroundColor = [UIColor whiteColor];
-        _popView.layer.masksToBounds = YES;
-        _popView.layer.cornerRadius = 7;
-    }
-    return _popView;
-}
+
 - (UIButton *)centerBtn{
     if(_centerBtn == nil){
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
